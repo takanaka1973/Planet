@@ -1,0 +1,9 @@
+//
+//	リソーススクリプト
+//
+
+#include "resource.h"
+
+// アプリケーションアイコン
+IDI_APP ICON DISCARDABLE "app.ico"
+
