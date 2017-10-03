@@ -142,7 +142,7 @@ void CustomWindow::onLButtonDown()
 //
 //	WM_KEYDOWNのメッセージハンドラ
 //
-void CustomWindow::onKeyDown(UINT key_code)
+void CustomWindow::onKeyDown(UINT_PTR key_code)
 {
 }
 

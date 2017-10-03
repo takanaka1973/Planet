@@ -7,7 +7,7 @@
 #include "ClockObserver.h"
 
 // タイマーのコールバック間隔(ms)
-static const UINT TIMER_INTERVAL = 10;
+static const UINT_PTR TIMER_INTERVAL = 10;
 
 // 1 timespanの時間(ms)
 static const DWORD UNIT_TIMESPAN_MS = 100;
@@ -43,7 +43,7 @@ bool Clock::start()
 	bool ret = false;
 
 	if (!m_working) {
-		UINT timer_id = SetTimer(NULL, 0, TIMER_INTERVAL, baseTimerCallback);
+		UINT_PTR timer_id = SetTimer(NULL, 0, TIMER_INTERVAL, baseTimerCallback);
 		if (timer_id != 0) {
 			s_clock_map.insert(ClockMap::value_type(timer_id, this));
 			m_working = true;
@@ -92,7 +92,7 @@ void Clock::timerCallback()
 //	タイマーのコールバック関数(代表)
 //
 void CALLBACK Clock::baseTimerCallback(
-	HWND handle, UINT message, UINT timer_id, DWORD system_time)
+	HWND handle, UINT message, UINT_PTR timer_id, DWORD system_time)
 {
 	ClockMap::iterator it = s_clock_map.find(timer_id);
 	if (it != s_clock_map.end()) {

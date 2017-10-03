@@ -32,7 +32,7 @@ protected:
 
 	// メッセージハンドラ
 	virtual void onLButtonDown();					// WM_LBUTTONDOWN
-	virtual void onKeyDown(UINT key_code);			// WM_KEYDOWN
+	virtual void onKeyDown(UINT_PTR key_code);		// WM_KEYDOWN
 	virtual void onSize();							// WM_SIZE
 	virtual void onClose();							// WM_CLOSE
 	virtual void onPaint();							// WM_PAINT

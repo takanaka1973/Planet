@@ -34,15 +34,15 @@ private:
 
 	// タイマーのコールバック関数(代表)
 	static void CALLBACK baseTimerCallback(
-		HWND handle, UINT message, UINT timer_id, DWORD system_time);
+		HWND handle, UINT message, UINT_PTR timer_id, DWORD system_time);
 
 	// タイマーIDと時計オブジェクトのマップ
-	typedef std::map<UINT, Clock*> ClockMap;
+	typedef std::map<UINT_PTR, Clock*> ClockMap;
 	static ClockMap s_clock_map;
 
 	ClockObserver *m_observer;	// 観察者
 	bool m_working;				// 動作中かどうか
-	UINT m_timer_id;			// タイマーID
+	UINT_PTR m_timer_id;		// タイマーID
 	DWORD m_last_time;			// 前回の時間
 
 	Clock(const Clock&);

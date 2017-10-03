@@ -89,7 +89,7 @@ int Application::run()
 		// Œv‚ğ’â~
 		m_clock->stop();
 
-		ret = msg.wParam;
+		ret = (int)msg.wParam;
 	}
 
 	return ret;
