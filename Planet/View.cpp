@@ -191,7 +191,7 @@ void View::onLButtonDown()
 //
 //	WM_KEYDOWNのメッセージハンドラ
 //
-void View::onKeyDown(UINT key_code)
+void View::onKeyDown(UINT_PTR key_code)
 {
 	assert(getHandle() != NULL);
 
