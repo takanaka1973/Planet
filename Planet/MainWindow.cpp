@@ -153,6 +153,17 @@ void MainWindow::optimizeSize()
 }
 
 //
+//	WM_SETFOCUSのメッセージハンドラ
+//
+void MainWindow::onSetFocus()
+{
+	assert(getHandle() != NULL);
+
+	// 常にサブビューにフォーカスを設定する
+	m_sub_view->setFocus();
+}
+
+//
 //	WM_PAINTのメッセージハンドラ(デバイスコンテキスト付き)
 //
 void MainWindow::onPaintWithDC(HDC device_context)

@@ -119,6 +119,9 @@ LRESULT CustomWindow::handleWndMsg(UINT message, WPARAM wParam, LPARAM lParam)
 	case WM_SIZE:
 		onSize();
 		break;
+	case WM_SETFOCUS:
+		onSetFocus();
+		break;
 	case WM_CLOSE:
 		onClose();
 		break;
@@ -150,6 +153,13 @@ void CustomWindow::onKeyDown(UINT_PTR key_code)
 //	WM_SIZEのメッセージハンドラ
 //
 void CustomWindow::onSize()
+{
+}
+
+//
+//	WM_SETFOCUSのメッセージハンドラ
+//
+void CustomWindow::onSetFocus()
 {
 }
 

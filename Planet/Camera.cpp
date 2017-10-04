@@ -4,6 +4,7 @@
 
 #include "common.h"
 #include "Camera.h"
+#include <cmath>
 
 //
 //	コンストラクタ
@@ -64,5 +65,20 @@ void Camera::move(const Vector3D& delta)
 {
 	m_position += delta;
 	m_ref_point += delta;
+}
+
+//
+//	Y軸に沿って回転する
+//
+void Camera::rotateAroundYAxis(double angleDelta)
+{
+	double currentX = m_position.getX();
+	double currentZ = m_position.getZ();
+
+	double newX = currentX * std::cos(angleDelta) - currentZ * std::sin(angleDelta);
+	double newZ = currentX * std::sin(angleDelta) + currentZ * std::cos(angleDelta);
+
+	m_position.setX(newX);
+	m_position.setZ(newZ);
 }
 

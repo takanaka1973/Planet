@@ -33,6 +33,8 @@ public:
 	virtual void setViewport(int x, int y, int width, int height);
 	// ƒJƒƒ‰‚ğˆÚ“®‚·‚é
 	virtual void moveCamera(const Vector3D& delta);
+	// ƒJƒƒ‰‚ğY²‚É‰ˆ‚Á‚Ä‰ñ“]‚·‚é
+	virtual void rotateCameraAroundYAxis(double angleDelta);
 
 private:
 

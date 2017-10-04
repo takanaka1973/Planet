@@ -178,48 +178,29 @@ void View::setViewport()
 }
 
 //
-//	WM_LBUTTONDOWNのメッセージハンドラ
-//
-void View::onLButtonDown()
-{
-	assert(getHandle() != NULL);
-
-//	// 自分にフォーカスを設定する
-//	setFocus();
-}
-
-//
 //	WM_KEYDOWNのメッセージハンドラ
 //
 void View::onKeyDown(UINT_PTR key_code)
 {
 	assert(getHandle() != NULL);
 
-	static const double distance = 1.0;
-	Vector3D delta;
 	bool move = true;
+	double angleDelta = 0.0;
 
-	// カメラの変位を決定する
 	switch (key_code) {
-	case VK_UP:
-		delta.setY(distance);
-		break;
-	case VK_DOWN:
-		delta.setY(-distance);
-		break;
 	case VK_LEFT:
-		delta.setX(-distance);
+		angleDelta = 0.01;
 		break;
 	case VK_RIGHT:
-		delta.setX(distance);
+		angleDelta = -0.01;
 		break;
 	default:
 		move = false;
 	}
 
 	if (move) {
-		// カメラを動かす
-		m_renderer->moveCamera(delta);
+		// カメラを回転する
+		m_renderer->rotateCameraAroundYAxis(angleDelta);
 
 		// 再描画要求
 		invalidateClientArea();

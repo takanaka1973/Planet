@@ -30,6 +30,8 @@ public:
 
 	// ˆÚ“®‚·‚é
 	virtual void move(const Vector3D& delta);
+	// YŽ²‚É‰ˆ‚Á‚Ä‰ñ“]‚·‚é
+	virtual void rotateAroundYAxis(double angleDelta);
 
 private:
 

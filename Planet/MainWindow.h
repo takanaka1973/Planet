@@ -33,6 +33,7 @@ public:
 protected:
 
 	// メッセージハンドラ <override>
+	virtual void onSetFocus();						// WM_SETFOCUS
 	virtual void onPaintWithDC(HDC device_context);	// WM_PAINT(デバイスコンテキスト付き)
 
 private:

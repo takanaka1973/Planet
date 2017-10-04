@@ -181,6 +181,16 @@ void Renderer::moveCamera(const Vector3D& delta)
 }
 
 //
+//	ƒJƒƒ‰‚ğY²‚É‰ˆ‚Á‚Ä‰ñ“]‚·‚é
+//
+void Renderer::rotateCameraAroundYAxis(double angleDelta)
+{
+	assert(m_initialized);
+
+	m_camera->rotateAroundYAxis(angleDelta);
+}
+
+//
 //	“Š‰es—ñ‚ğİ’è‚·‚é
 //
 void Renderer::setProjectionMatrix()
